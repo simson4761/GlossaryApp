@@ -26,44 +26,56 @@ class MainActivity : AppCompatActivity() {
         val queue  = Volley.newRequestQueue(this)
         dictionary_button.setOnClickListener{
             val searchWord1 = searchWord.text
-            val apiKey = "17b29b5e-9a96-46c1-a710-2d88dad3b925"
-            val url =
-                "https://www.dictionaryapi.com/api/v3/references/learners/json/$searchWord1?key=$apiKey"
+            if (searchWord1.isEmpty()){
+                Toast.makeText(this , "please enter value", Toast.LENGTH_SHORT).show()
+            }
+            else {
+                val apiKey = "17b29b5e-9a96-46c1-a710-2d88dad3b925"
+                val url =
+                    "https://www.dictionaryapi.com/api/v3/references/learners/json/$searchWord1?key=$apiKey"
 
-            val stringRequest = StringRequest(Request.Method.GET , url ,
-                { response ->
-                    getJSONDefinitionDictionary(response)
-                    var mean1 = getJSONDefinitionDictionary(response).toString()
-                    mean1 = mean1.removePrefix("Def(def")
-                    mean1 = mean1.replace("=",". ").removePrefix("(def1").replace("def2","\n2.").removeSuffix(")")
-                    answer.text = mean1
-                    answer.visibility = View.VISIBLE
-                },
-                {
-                    Toast.makeText(this , "error", Toast.LENGTH_SHORT).show()
+                val stringRequest = StringRequest(Request.Method.GET, url,
+                    { response ->
+                        getJSONDefinitionDictionary(response)
+                        var mean1 = getJSONDefinitionDictionary(response).toString()
+                        mean1 = mean1.removePrefix("Def(def")
+                        mean1 =
+                            mean1.replace("=", ". ").removePrefix("(def1").replace("def2", "\n2.")
+                                .removeSuffix(")")
+                        answer.text = mean1
+                        answer.visibility = View.VISIBLE
+                    },
+                    {
+                        Toast.makeText(this, "error", Toast.LENGTH_SHORT).show()
                     }
-            )
-            queue.add(stringRequest)
+                )
+                queue.add(stringRequest)
+            }
         }
         thesaurus_button.setOnClickListener {
             val searchWord1 = searchWord.text
-            val apiKey = "3915a5b3-b1c9-4ca6-941f-a2eae35a7af1"
-            val url =
-                "https://www.dictionaryapi.com/api/v3/references/ithesaurus/json/$searchWord1?key=$apiKey"
+            if (searchWord1.isEmpty()){
+                Toast.makeText(this , "please enter value", Toast.LENGTH_SHORT).show()
+            }
+            else {
+                val apiKey = "3915a5b3-b1c9-4ca6-941f-a2eae35a7af1"
+                val url =
+                    "https://www.dictionaryapi.com/api/v3/references/ithesaurus/json/$searchWord1?key=$apiKey"
 
-            val stringRequest = StringRequest(Request.Method.GET , url ,
-                { response ->
-                    getJSONDefinitionThesaurus(response)
-                    var synonyms = getJSONDefinitionThesaurus(response).toString()
-                    synonyms = synonyms.replace("["," ").replace("]"," ").replace('"',' ')
-                    answer.text = synonyms
-                    answer.visibility = View.VISIBLE
-                },
-                {
-                    Toast.makeText(this , "error", Toast.LENGTH_SHORT).show()
-                }
-            )
-            queue.add(stringRequest)
+                val stringRequest = StringRequest(Request.Method.GET, url,
+                    { response ->
+                        getJSONDefinitionThesaurus(response)
+                        var synonyms = getJSONDefinitionThesaurus(response).toString()
+                        synonyms = synonyms.replace("[", " ").replace("]", " ").replace('"', ' ')
+                        answer.text = synonyms
+                        answer.visibility = View.VISIBLE
+                    },
+                    {
+                        Toast.makeText(this, "error", Toast.LENGTH_SHORT).show()
+                    }
+                )
+                queue.add(stringRequest)
+            }
         }
 
 
