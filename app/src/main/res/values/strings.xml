@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">GLOSSARY</string>
+    <string name="enter">enter</string>
+    <string name="meaning">Meaning</string>
+    <string name="similar_words">Similar Words</string>
+    <string name="thesaurus">Thesaurus</string>
+    <string name="dictionary">Dictionary</string>
+    <string name="textview">TextView</string>
+    <string name="about">Hi , Im simson your friendly developer.I have attached all my online handles down below if you would like to contact me. peace...</string>
+    <string name="about_dev">About Dev</string>
+    <string name="jump_to_github_handle">jump to github handle</string>
+    <string name="jump_to_linkedin_handle">jump to linkedin handle</string>
+    <string name="jump_to_insta_handle">jump to insta handle</string>
+    <string name="github">Github</string>
+    <string name="simson_mp4">/@simson.mp4</string>
+    <string name="linkedin">linkedin</string>
+</resources>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/dictionary"
+        android:title="@string/dictionary" />
+    <item
+        android:id="@+id/thesaurus"
+        android:title="@string/thesaurus" />
+    <item
+        android:id="@+id/developer"
+        android:title="@string/about_dev"/>
+</menu>

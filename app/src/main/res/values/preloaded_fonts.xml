@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/give_you_glory</item>
+        <item>@font/great_vibes</item>
+        <item>@font/life_savers</item>
+        <item>@font/life_savers_bold</item>
+        <item>@font/metal_mania</item>
+        <item>@font/mrs_saint_delafield</item>
+    </array>
+</resources>
